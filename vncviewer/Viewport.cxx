@@ -841,6 +841,16 @@ void Viewport::handleKeyPress(int keyCode, rdr::U32 keySym)
     return;
   }
 
+switch (keySym) {
+  case XK_Super_L:
+    keySym = XK_Control_R;
+    break;
+  case XK_Super_R:
+    keySym = XK_Control_L;
+    break;
+}
+
+/*
 #ifdef __APPLE__
   // Alt on OS X behaves more like AltGr on other systems, and to get
   // sane behaviour we should translate things in that manner for the
@@ -862,6 +872,7 @@ void Viewport::handleKeyPress(int keyCode, rdr::U32 keySym)
     break;
   }
 #endif
+*/
 
   // Because of the way keyboards work, we cannot expect to have the same
   // symbol on release as when pressed. This breaks the VNC protocol however,
